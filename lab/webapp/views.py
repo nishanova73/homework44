@@ -30,6 +30,7 @@ def bulls_and_cows_view(request):
     return render(request, 'bulls_and_cows.html')
 
 def results_page_view(request):
+    print('aaa')
     global FIRST_TIME, COMPUTER, HISTORY
     if FIRST_TIME:
         COMPUTER = generateNum()
@@ -37,6 +38,7 @@ def results_page_view(request):
         FIRST_TIME = False
     bulls = 0
     cows = 0
+    print(request.POST.get('numbers'))
     if request.POST.get('numbers') != None:
         curr_guess = request.POST.get('numbers').split(' ')
         

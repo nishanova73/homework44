@@ -8,14 +8,14 @@
 <body style="background-color: darkcyan">
     <div>
         <p><h1 style="text-align: center; color: darkslategrey; margin-top: 70px;">Guess 4 numbers. Enter them separated with spaces:</h1></p>
-            <div style="text-align: center; padding-top: 25px">
+            <form style="text-align: center; padding-top: 25px" method="POST" action="/results_page/">
                 <input id="nums" type="num" name="numbers" value="">
-                <!-- <input type="submit" value="Check"/> -->
-                <button onclick="check()">Submit</button>
+                <input type="submit" value="Check" onclick="check()"/>
+                <!-- <button onclick="check()">Submit</button> -->
                 {% if res %}
                 <p>Result: {{ res }}</p>
                 {% endif %}
-            </div>
+            <!-- </form> -->
         <p style="text-align: center"><img width="620px" height="350px" src="{% static 'img/bullscows.jpeg' %}" alt=""></p>
     </div>
 </body>
@@ -25,8 +25,6 @@
         const n = document.getElementById('nums');
         if (n.value.split(' ').length != 4) {
             alert('Please put spaces between numbers')
-        } else {
-            // fetch
         }
     }
 </script>
