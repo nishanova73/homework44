@@ -30,4 +30,22 @@ def bulls_and_cows_view(request):
     return render(request, 'bulls_and_cows.html')
 
 def results_page_view(request):
+    global FIRST_TIME, COMPUTER, HISTORY
+    if FIRST_TIME:
+        COMPUTER = generateNum()
+        print(COMPUTER)
+        FIRST_TIME = False
+    curr_guess = request.POST.get('numbers').split(' ')
+    print(curr_guess)
+    bulls = 0
+    cows = 0
+    for i in range(len(curr_guess)):
+        if curr_guess[i] == str(COMPUTER)[i]:
+            print('Bull')
+            bulls += 1
+        else: 
+            print('Cow', curr_guess[i], str(COMPUTER)[i])
+            cows += 1
+
+    HISTORY.append([request.POST.get('numbers'), bulls, cows])
     return render(request, 'results_page.html')
