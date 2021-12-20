@@ -1,21 +1,22 @@
-<!DOCTYPE html>
+{% load static %}
+<!doctype html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<link href="../static/style.css" rel="stylesheet" type="text/css">
 </head>
-<body>
+<body style="background-color: darkcyan">
 	<div>
-		<h1>Welcome to our gaming paradise! </h1>
+		<h1 style="text-align: center; color: darkslategrey; margin-top: 70px;">Welcome to our gaming paradise! </h1>
 	<p>
-		<h3>We are now actively developing our site! You can enjoy the game "Bulls and Cows" below.</h3>
+		<h2 style=" text-align: center; color: darkslategrey;">We are now actively developing our site! You can enjoy the game "Bulls and Cows" below.</h2>
 	</p>
 	<p>
-		<h5><a href="bulls_and_cows">⚔︎Bulls and Cows⚔︎</a></h5>
+		<h3 style=" text-align: center;"><a style="color: darkolivegreen;" href="bulls_and_cows">⚔︎Bulls and Cows⚔︎</a></h3>
 	</p>
+	<p style="text-align: center"><img width="620px" height="350px" src="{% static 'img/bandc.jpeg' %}" alt=""></p>
 	</div>
 </body>
 </html>

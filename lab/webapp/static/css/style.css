@@ -1,27 +1,27 @@
-.h1{
+h1{
     text-align: center;
     font-family: "Euphemia UCAS";
     color: cadetblue;
     margin-top: 70px;
 }
 
-.h3{
+h3{
     text-align: center;
     font-family: "Euphemia UCAS";
     color: cadetblue;
 }
 
-.h5{
+h5{
     text-align: center;
     font-family: "Euphemia UCAS";
     color: cadetblue;
 }
 
-.p{
+p{
     text-align: center;
 }
 
-.body {
+body {
     background-color: darkcyan;
     text-align: center;
 }

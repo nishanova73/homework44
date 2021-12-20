@@ -1,10 +1,18 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
-<body>
-$END$
+<body style="background-color: darkcyan">
+    <div>
+        <p><h1 style="text-align: center; color: darkslategrey; margin-top: 70px;">Guess 4 numbers. Enter them separated with spaces:</h1></p>
+            <form style="text-align: center; padding-top: 25px" method="POST" action="/bulls_and_cows">
+                <input type="num" name="numbers" value="">
+                <input type="submit" value="Check"/>
+            </form>
+        <p style="text-align: center"><img width="620px" height="350px" src="{% static 'img/bullscows.jpeg' %}" alt=""></p>
+    </div>
 </body>
 </html>
