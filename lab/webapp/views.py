@@ -39,6 +39,7 @@ def results_page_view(request):
     cows = 0
     if request.POST.get('numbers') != None:
         curr_guess = request.POST.get('numbers').split(' ')
+        
         print(curr_guess)
         
         for i in range(len(curr_guess)):
