@@ -35,19 +35,21 @@ def results_page_view(request):
         COMPUTER = generateNum()
         print(COMPUTER)
         FIRST_TIME = False
-    curr_guess = request.POST.get('numbers').split(' ')
-    print(curr_guess)
     bulls = 0
     cows = 0
-    for i in range(len(curr_guess)):
-        if curr_guess[i] == str(COMPUTER)[i]:
-            print('Bull')
-            bulls += 1
-        else: 
-            print('Cow', curr_guess[i], str(COMPUTER)[i])
-            cows += 1
+    if request.POST.get('numbers') != None:
+        curr_guess = request.POST.get('numbers').split(' ')
+        print(curr_guess)
+        
+        for i in range(len(curr_guess)):
+            if curr_guess[i] == str(COMPUTER)[i]:
+                print('Bull')
+                bulls += 1
+            else: 
+                print('Cow', curr_guess[i], str(COMPUTER)[i])
+                cows += 1
 
-    HISTORY.append([request.POST.get('numbers'), bulls, cows])
+        HISTORY.append([request.POST.get('numbers'), bulls, cows])
     win = False
     if bulls == 4:
         win = True
