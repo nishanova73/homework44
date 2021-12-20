@@ -6,3 +6,6 @@ def main_page_view(request):
 
 def bulls_and_cows_view(request):
     return render(request, 'bulls_and_cows.html')
+
+def results_page_view(request):
+    return render(request, 'results_page.html')
