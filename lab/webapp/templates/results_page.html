@@ -5,9 +5,39 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<style>
+    th, td {
+        border: 2px solid black;
+    }
+</style>
 <body style="background-color: darkcyan">
-	<div>
+	<div id="mother">
 		<h1 style="text-align: center; color: darkslategrey;">Results! </h1>
+        <table id="historyy">
+            <tr>
+                <th>Guess</th>
+                <th>Bulls</th>
+                <th>Cows</th>
+            </tr>
+            
+        </table>
+		<h3 style=" text-align: center;"><a style="color: darkolivegreen;" href="/bulls_and_cows">⚔Guess Again!</a></h3>
+        
     </div>
 </body>
+
+<script>
+    var YOUR_JS_LIST = {{history|safe}}; 
+    var win = "{{win|safe}}"
+
+    if (win == "True") {
+        document.getElementById('mother').innerHTML += `<h3>You win!</h3>`;
+    }
+
+    const u = document.getElementById('historyy');
+
+    YOUR_JS_LIST.forEach(element => {
+        u.innerHTML += `<tr><td>${element[0]}</td><td>${element[1]}</td><td>${element[2]}</td></tr>`
+    });
+</script>
 </html>
