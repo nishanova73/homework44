@@ -48,4 +48,8 @@ def results_page_view(request):
             cows += 1
 
     HISTORY.append([request.POST.get('numbers'), bulls, cows])
-    return render(request, 'results_page.html')
+    win = False
+    if bulls == 4:
+        win = True
+
+    return render(request, 'results_page.html', {'history': HISTORY, "win": win})
